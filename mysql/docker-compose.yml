@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  my-mysql:
+    container_name: mysql-${APP_NAME}
+    build:
+      context: .
+      dockerfile: ./mysql-${APP_NAME}.dockerfile
+    image: mysql-sebatest
+    ports:
+      - "3306:3306"
+    env_file:
+      - ./mysql-${APP_NAME}.env
+    volumes:
+      - $HOME/docker-volumes/${APP_NAME}:/var/lib/mysql
