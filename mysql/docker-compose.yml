@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: ./mysql-${APP_NAME}.dockerfile
-    image: mysql-sebatest
+    image: mysql-${APP_NAME}
     ports:
       - "3306:3306"
     env_file:
